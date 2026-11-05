@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Perfil WhatsApp · mila·ops</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--crema:#f5f3ef;--tinta:#1c1c27;--violeta:#6b63d0;--lila:#a29bf2;--lila-suave:#ecebf8;
+    --display:"Bricolage Grotesque","Inter",sans-serif;--texto:"Inter",sans-serif}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--texto)}
+  .p{display:none;position:relative;overflow:hidden}
+  .p.on{display:block}
+  h1,p{margin:0}
+
+  /* Foto de perfil 640 × 640: WhatsApp la recorta en círculo, todo va al centro */
+  #avatar{width:640px;height:640px;background:radial-gradient(circle at 50% 38%,#8a83e6 0%,var(--violeta) 55%,#4f47b3 100%)}
+  #avatar .aro{position:absolute;left:50%;top:50%;width:470px;height:470px;transform:translate(-50%,-50%);border-radius:50%;
+    background:#fff;padding:14px;box-shadow:0 20px 50px rgba(20,16,70,.35)}
+  #avatar .aro img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+  #avatar .brillo{position:absolute;width:300px;height:300px;border-radius:50%;background:var(--lila);filter:blur(80px);opacity:.55;top:-80px;right:-60px}
+
+  /* Banner 1920 × 1080. Lo importante va en la franja central (alto 640) por si se recorta. */
+  #portada{width:1920px;height:1080px;background:var(--tinta);color:#fff}
+  #portada .blob{position:absolute;border-radius:50%;filter:blur(110px)}
+  #portada .contenido{position:absolute;left:0;right:0;top:220px;height:640px;display:flex;align-items:center;gap:90px;padding:0 200px}
+  #portada .cara{flex:none;width:400px;height:400px;border-radius:50%;background:#fff;padding:14px;box-shadow:0 30px 70px rgba(0,0,0,.4)}
+  #portada .cara img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+  #portada .marca{font-family:var(--display);font-weight:800;font-size:64px;letter-spacing:-.03em}
+  #portada .marca span{color:var(--lila)}
+  #portada .etq{font-size:28px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lila);margin:18px 0 22px}
+  #portada h1{font-family:var(--display);font-weight:800;font-size:92px;line-height:1.02;letter-spacing:-.03em}
+  #portada h1 em{font-style:normal;color:var(--lila)}
+  #portada .pie{display:flex;gap:18px;margin-top:38px}
+  #portada .chip{background:#26263a;border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:14px 26px;font-size:28px;font-weight:600;color:#e4e1fb}
+  #portada .chip.v{background:var(--violeta);border-color:var(--violeta);color:#fff}
+</style>
+</head>
+<body>
+<section class="p" id="avatar">
+  <div class="brillo"></div>
+  <div class="aro"><img src="../img/retrato.png" alt=""></div>
+</section>
+
+<section class="p" id="portada">
+  <div class="blob" style="width:800px;height:800px;background:var(--violeta);top:-300px;right:-200px;opacity:.7"></div>
+  <div class="blob" style="width:520px;height:520px;background:#f6c6bd;bottom:-260px;left:-160px;opacity:.3"></div>
+  <div class="contenido">
+    <div class="cara"><img src="../img/retrato.png" alt=""></div>
+    <div>
+      <div class="marca">mila<span>·</span>ops</div>
+      <div class="etq">Webs · Automatizaciones · Agentes de IA</div>
+      <h1>Primero entiendo cómo trabajás. Después hago que <em>funcione solo.</em></h1>
+      <div class="pie">
+        <span class="chip v">Charla de 30 min sin costo</span>
+        <span class="chip">mila-ops-ia.github.io/servicios</span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>document.getElementById(location.hash.slice(1) || "avatar").classList.add("on")</script>
+</body>
+</html>

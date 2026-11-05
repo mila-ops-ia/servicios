@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit de marca · mila·ops</title>
+<meta name="description" content="Colores, tipografías, avatar, banners, video y textos de la marca mila·ops.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%236b63d0'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='800' font-size='34' text-anchor='middle' fill='white'%3Em%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--crema:#f5f3ef;--crema-2:#ece8e0;--tinta:#1c1c27;--gris:#5c5c6e;--violeta:#6b63d0;--violeta-osc:#4f47b3;--lila:#a29bf2;--lila-suave:#ecebf8;--coral:#f07a6c;
+    --display:"Bricolage Grotesque","Inter",system-ui,sans-serif;--texto:"Inter",system-ui,sans-serif}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--crema);color:var(--tinta);font-family:var(--texto);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  img,video{max-width:100%;display:block}
+  a{color:var(--violeta)}
+  .c{width:min(1100px,100% - 32px);margin-inline:auto}
+  header{padding:48px 0 28px}
+  .volver{font-weight:600;text-decoration:none;font-size:.95rem}
+  h1,h2,h3{font-family:var(--display);letter-spacing:-.02em;line-height:1.05;margin:0}
+  h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;margin:18px 0 10px}
+  h1 span{color:var(--violeta)}
+  header p{color:var(--gris);max-width:640px;margin:0}
+  section{padding:34px 0;border-top:1px solid rgba(28,28,39,.08)}
+  h2{font-size:1.8rem;font-weight:800;margin-bottom:6px}
+  .sub{color:var(--gris);margin:0 0 22px;font-size:.98rem}
+  .colores{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .color{background:#fff;border-radius:18px;overflow:hidden;border:1px solid rgba(28,28,39,.06)}
+  .color div{height:86px}
+  .color p{margin:0;padding:10px 14px;font-size:.88rem}
+  .color b{display:block}
+  .color code{color:var(--gris)}
+  .tipos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .tipo{background:#fff;border-radius:20px;padding:24px;border:1px solid rgba(28,28,39,.06)}
+  .tipo .muestra{font-size:2.4rem;line-height:1.1;margin:6px 0 8px}
+  .tipo small{color:var(--gris)}
+  .grilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .pieza{background:#fff;border-radius:18px;padding:10px;border:1px solid rgba(28,28,39,.06);text-decoration:none;color:inherit;transition:transform .2s}
+  .pieza:hover{transform:translateY(-3px)}
+  .pieza img{border-radius:10px}
+  .pieza span{display:block;font-size:.85rem;font-weight:600;padding:8px 4px 2px}
+  .pieza small{display:block;color:var(--gris);font-size:.78rem;padding:0 4px}
+  .perfil{display:grid;grid-template-columns:220px 1fr;gap:16px;align-items:start}
+  .video{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}
+  .video video{border-radius:18px;background:#000;width:100%}
+  .boton{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;background:var(--violeta);color:#fff;font-weight:600;text-decoration:none;font-size:.95rem;margin:6px 8px 0 0}
+  .boton.borde{background:transparent;color:var(--tinta);border:1.5px solid var(--tinta)}
+  .textos{display:grid;gap:10px}
+  .texto{background:#fff;border-radius:16px;padding:14px 18px;border:1px solid rgba(28,28,39,.06);display:flex;justify-content:space-between;gap:14px;align-items:center}
+  .texto p{margin:0;font-size:.95rem;min-width:0;overflow-wrap:anywhere}
+  .texto b{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--violeta);display:block}
+  .copiar{flex:none;border:1.5px solid var(--crema-2);background:var(--crema);border-radius:999px;padding:7px 14px;font:600 .85rem var(--texto);cursor:pointer;color:var(--tinta)}
+  .voz{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .voz div{background:#fff;border-radius:20px;padding:22px 24px;border:1px solid rgba(28,28,39,.06)}
+  .voz h3{font-size:1.15rem;margin-bottom:8px}
+  .voz ul{margin:0;padding-left:18px;color:var(--gris);font-size:.95rem}
+  footer{padding:30px 0 50px;color:var(--gris);font-size:.9rem}
+  @media (max-width:720px){.tipos,.perfil,.video,.voz{grid-template-columns:1fr}.video video{max-width:300px}}
+</style>
+</head>
+<body>
+<header class="c">
+  <a class="volver" href="../">← Volver a mila·ops</a>
+  <h1>Kit de marca <span>mila·ops</span></h1>
+  <p>Todo lo que uso para mostrar mi marca: colores, tipografías, avatar, banners, video, música y textos. Tocá cualquier pieza para descargarla.</p>
+</header>
+
+<main class="c">
+  <section>
+    <h2>Colores</h2>
+    <p class="sub">El violeta es el color principal. El crema y la tinta son los fondos.</p>
+    <div class="colores">
+      <div class="color"><div style="background:#6b63d0"></div><p><b>Violeta</b><code>#6b63d0</code></p></div>
+      <div class="color"><div style="background:#a29bf2"></div><p><b>Lila</b><code>#a29bf2</code></p></div>
+      <div class="color"><div style="background:#ecebf8"></div><p><b>Lila suave</b><code>#ecebf8</code></p></div>
+      <div class="color"><div style="background:#1c1c27"></div><p><b>Tinta</b><code>#1c1c27</code></p></div>
+      <div class="color"><div style="background:#f5f3ef;border-bottom:1px solid #ece8e0"></div><p><b>Crema</b><code>#f5f3ef</code></p></div>
+      <div class="color"><div style="background:#f07a6c"></div><p><b>Coral</b><code>#f07a6c</code></p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tipografías</h2>
+    <p class="sub">Las dos son gratis, de Google Fonts.</p>
+    <div class="tipos">
+      <div class="tipo"><small>Títulos</small><div class="muestra" style="font-family:var(--display);font-weight:800">Bricolage Grotesque</div><small>Negrita 800, letras un poco juntas</small></div>
+      <div class="tipo"><small>Textos</small><div class="muestra" style="font-family:var(--texto);font-weight:500">Inter</div><small>Regular 400 y semi negrita 600</small></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Avatar y portada</h2>
+    <p class="sub">Para la foto de perfil de WhatsApp, LinkedIn o Instagram, y para la portada de WhatsApp Business o LinkedIn.</p>
+    <div class="perfil">
+      <a class="pieza" href="perfil/perfil-avatar-mili.png" download><img src="perfil/perfil-avatar-mili.png" alt="Foto de perfil con Mili"><span>Foto de perfil</span><small>640 × 640 · PNG</small></a>
+      <a class="pieza" href="perfil/perfil-banner-portada.png" download><img src="perfil/perfil-banner-portada.png" alt="Portada de mila·ops"><span>Portada</span><small>1920 × 1080 · PNG</small></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Banners para el estado de WhatsApp</h2>
+    <p class="sub">1080 × 1920, en el orden en que se publican. Arriba y abajo hay margen para las barras de WhatsApp.</p>
+    <div class="grilla">
+      <a class="pieza" href="banners/1-gancho.png" download><img src="banners/1-gancho.png" alt="" loading="lazy"><span>1 · Gancho</span></a>
+      <a class="pieza" href="banners/2-te-suena.png" download><img src="banners/2-te-suena.png" alt="" loading="lazy"><span>2 · ¿Te suena?</span></a>
+      <a class="pieza" href="banners/3-mili.png" download><img src="banners/3-mili.png" alt="" loading="lazy"><span>3 · Mili</span></a>
+      <a class="pieza" href="banners/4-demo-app.png" download><img src="banners/4-demo-app.png" alt="" loading="lazy"><span>4 · Demo de la app</span></a>
+      <a class="pieza" href="banners/5-demo-salud.png" download><img src="banners/5-demo-salud.png" alt="" loading="lazy"><span>5 · Demo de Salud</span></a>
+      <a class="pieza" href="banners/6-que-hago.png" download><img src="banners/6-que-hago.png" alt="" loading="lazy"><span>6 · Qué hago</span></a>
+      <a class="pieza" href="banners/7-charlemos.png" download><img src="banners/7-charlemos.png" alt="" loading="lazy"><span>7 · Charlemos</span></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Video y música</h2>
+    <p class="sub">Los 7 banners en 30 segundos, con música lo-fi original. La música no tiene derechos de autor de terceros: la compuse con código.</p>
+    <div class="video">
+      <video src="video-estado-mila-ops.mp4" controls playsinline preload="metadata" poster="banners/1-gancho.png"></video>
+      <div>
+        <p style="margin-top:0">Sirve para el estado de WhatsApp, reels o historias. Dura 30 segundos, así que entra en un solo estado.</p>
+        <a class="boton" href="video-estado-mila-ops.mp4" download>Descargar video</a>
+        <a class="boton borde" href="musica-lofi-original.m4a" download>Descargar música</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Textos</h2>
+    <p class="sub">Para acompañar cada estado o para el mensaje de presentación.</p>
+    <div class="textos" id="textos"></div>
+  </section>
+
+  <section>
+    <h2>Cómo hablo</h2>
+    <div class="voz">
+      <div><h3>Sí</h3><ul>
+        <li>Voseo y primera persona: “te cuento”, “armo”, “probala”.</li>
+        <li>Frases cortas y honestas, con lo que funcionó y lo que no.</li>
+        <li>Hablar de horas y plata que se ahorran, no de tecnología.</li>
+        <li>Contar mi recorrido por roles: atención al cliente → operaciones → procesos e IA.</li>
+      </ul></div>
+      <div><h3>No</h3><ul>
+        <li>Palabras de escuela: clase, curso, alumno, capacitación.</li>
+        <li>Nombres de empresas donde trabajé.</li>
+        <li>Jerga técnica sin explicar.</li>
+        <li>Promesas que no puedo medir.</li>
+      </ul></div>
+    </div>
+  </section>
+</main>
+
+<footer class="c">mila·ops · <a href="../">mila-ops-ia.github.io/servicios</a> · <a href="https://github.com/mila-ops-ia/servicios/tree/main/kit/fuentes">Fuentes editables</a></footer>
+
+<script>
+  const WA = "https://wa.me/595985230647?text=Hola%20Mila%2C%20vi%20tu%20estado%20y%20quiero%20saber%20m%C3%A1s";
+  const textos = [
+    ["Presentación", `¿Tu negocio vive en planillas y WhatsApp? 📋💬\n\nArmo webs, automatizaciones y asistentes de IA para que tu negocio funcione solo. Primero entiendo cómo trabajás, después lo automatizo.\n\n👉 Probá la demo gratis: https://mila-ops-ia.github.io/servicios/#demo\n\n💬 Escribime y charlamos 30 minutos sin costo:\n${WA}`],
+    ["Estado 1 · Gancho", "Arranqué algo nuevo 👀 Les cuento en los próximos estados"],
+    ["Estado 2 · ¿Te suena?", "¿A quién le pasa? 🙋‍♀️"],
+    ["Estado 3 · Mili", "Ella es Mili, la asistente que armo para los negocios 💜"],
+    ["Estado 4 · Demo", "Probala gratis desde el celu 👉 https://mila-ops-ia.github.io/servicios/#demo"],
+    ["Estado 5 · Salud", "Te avisa antes de que sea tarde 😮"],
+    ["Estado 6 · Qué hago", "Webs, automatizaciones, apps y agentes de IA. Todo con instructivo 📘"],
+    ["Estado 7 · Charlemos", `Charlemos 30 min sin costo 💬 ${WA}`],
+  ];
+  const caja = document.getElementById("textos");
+  textos.forEach(([titulo, texto]) => {
+    const d = document.createElement("div"); d.className = "texto";
+    const p = document.createElement("p");
+    const b = document.createElement("b"); b.textContent = titulo;
+    p.append(b, document.createTextNode(texto.length > 140 ? texto.slice(0, 140) + "…" : texto));
+    const btn = document.createElement("button"); btn.className = "copiar"; btn.textContent = "Copiar";
+    btn.onclick = async () => {
+      try { await navigator.clipboard.writeText(texto); btn.textContent = "¡Copiado!"; }
+      catch (e) { btn.textContent = "No se pudo"; }
+      setTimeout(() => btn.textContent = "Copiar", 1800);
+    };
+    d.append(p, btn); caja.append(d);
+  });
+</script>
+</body>
+</html>

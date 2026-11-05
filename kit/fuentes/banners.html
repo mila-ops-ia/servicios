@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Banners estado WhatsApp · mila·ops</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Cada banner mide 1080 × 1920. Zona segura: 260 px arriba y 300 abajo (barras de WhatsApp). */
+  :root{
+    --crema:#f5f3ef; --crema-2:#ece8e0; --tinta:#1c1c27; --gris:#5c5c6e;
+    --violeta:#6b63d0; --violeta-osc:#4f47b3; --lila:#a29bf2; --lila-suave:#ecebf8; --coral:#f07a6c; --verde:#1f9d63;
+    --display:"Bricolage Grotesque","Inter",sans-serif; --texto:"Inter",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#999;font-family:var(--texto);color:var(--tinta)}
+  .b{width:1080px;height:1920px;position:relative;overflow:hidden;display:none;flex-direction:column;padding:260px 90px 300px}
+  .b.on{display:flex}
+  body.todos .b{display:flex;margin:0 auto 40px}
+  h1,h2{font-family:var(--display);letter-spacing:-.03em;line-height:1.02;margin:0;font-weight:800}
+  .marca{position:absolute;left:90px;bottom:220px;font-family:var(--display);font-weight:800;font-size:44px;letter-spacing:-.03em}
+  .marca span{color:var(--violeta)}
+  .url{position:absolute;right:90px;bottom:228px;font-size:30px;font-weight:600;opacity:.75}
+  .etq{font-size:30px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--violeta);margin-bottom:34px}
+  em{font-style:normal;color:var(--violeta)}
+  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.6;z-index:0}
+  .b > *{position:relative;z-index:1}
+  .b > .blob{position:absolute;z-index:0}
+  .b > .marca,.b > .url{position:absolute}
+
+  /* Fondos */
+  .oscuro{background:var(--tinta);color:#fff}
+  .oscuro em{color:var(--lila)}
+  .oscuro .etq{color:var(--lila)}
+  .oscuro .marca span{color:var(--lila)}
+  .violeta{background:var(--violeta);color:#fff}
+  .violeta em{color:var(--tinta)}
+  .violeta .etq{color:var(--lila-suave)}
+  .violeta .marca span{color:var(--tinta)}
+  .claro{background:var(--crema)}
+
+  /* 1 · Gancho */
+  .b1 h1{font-size:136px;margin-top:120px}
+  .b1 .bajada{font-size:52px;line-height:1.25;color:#c9c8d8;margin-top:60px;max-width:860px}
+  .b1 .flecha{margin-top:auto;font-family:var(--display);font-size:58px;font-weight:600;color:#fff}
+  .b1 .flecha b{color:var(--lila)}
+
+  /* 2 · Dolores */
+  .b2 h2{font-size:96px;margin-bottom:60px}
+  .lista{display:flex;flex-direction:column;gap:28px}
+  .item{background:#fff;border-radius:40px;padding:36px 42px;display:flex;gap:30px;align-items:center;font-size:44px;line-height:1.25;box-shadow:0 14px 40px rgba(28,28,39,.07)}
+  .item .e{font-size:64px;flex:none}
+  .item b{font-weight:700}
+  .b2 .remate{margin-top:56px;font-family:var(--display);font-weight:800;font-size:84px;line-height:1.05}
+
+  /* 3 · Mili */
+  .b3 h2{font-size:104px}
+  .b3 .sub{font-size:46px;line-height:1.3;color:#e4e1fb;margin:34px 0 0}
+  .cara{width:360px;height:360px;border-radius:50%;border:14px solid #fff;overflow:hidden;margin:70px auto 50px;box-shadow:0 30px 60px rgba(20,16,70,.35)}
+  .cara img{width:100%;height:100%;object-fit:cover}
+  .burbujas{display:flex;flex-direction:column;gap:22px}
+  .bu{background:#fff;color:var(--tinta);font-size:40px;line-height:1.3;padding:28px 36px;border-radius:40px;border-bottom-left-radius:12px;max-width:860px;box-shadow:0 14px 30px rgba(20,16,70,.25)}
+  .bu.yo{align-self:flex-end;background:var(--lila-suave);border-bottom-left-radius:40px;border-bottom-right-radius:12px}
+
+  /* 4 y 5 · Celular con la app */
+  .celu{width:460px;height:920px;border-radius:64px;background:#111;padding:18px;box-shadow:0 40px 80px rgba(28,28,39,.35);flex:none}
+  .celu img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:50px}
+  .b4,.b5{padding-top:230px}
+  .b4 h2,.b5 h2{font-size:92px}
+  .b4 .sub,.b5 .sub{font-size:42px;line-height:1.3;color:var(--gris);margin:26px 0 50px}
+  .b5 .sub{color:#c9c8d8}
+  .fila{display:flex;gap:44px;align-items:center}
+  .notas{display:flex;flex-direction:column;gap:26px}
+  .nota{background:#fff;border-radius:32px;padding:28px 30px;font-size:34px;line-height:1.3;box-shadow:0 14px 34px rgba(28,28,39,.1)}
+  .nota b{display:block;font-family:var(--display);font-size:44px;color:var(--violeta);margin-bottom:4px}
+  .oscuro .nota{background:#26263a;color:#e4e1fb}
+  .oscuro .nota b{color:var(--lila)}
+  .pastilla{display:inline-block;background:var(--violeta);color:#fff;font-weight:700;font-size:38px;padding:24px 40px;border-radius:999px;margin-top:6px}
+  .oscuro .pastilla{background:var(--lila);color:var(--tinta)}
+
+  /* 6 · Qué hago */
+  .b6 h2{font-size:100px;margin-bottom:56px}
+  .servicios{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .serv{background:#fff;border-radius:40px;padding:40px 36px;min-height:270px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 14px 34px rgba(28,28,39,.07)}
+  .serv .e{font-size:68px}
+  .serv b{display:block;font-family:var(--display);font-size:48px;line-height:1.05;letter-spacing:-.02em}
+  .serv span{display:block;font-size:30px;color:var(--gris);line-height:1.3;margin-top:8px}
+  .serv.ancho{grid-column:span 2;background:var(--tinta);color:#fff;min-height:0;flex-direction:row;align-items:center;gap:30px;justify-content:flex-start}
+  .serv.ancho span{color:#c9c8d8}
+
+  /* 7 · Llamado */
+  .b7{align-items:center;text-align:center}
+  .foto{width:420px;height:420px;border-radius:50%;overflow:hidden;border:16px solid #fff;box-shadow:0 30px 60px rgba(28,28,39,.25);margin:40px 0 60px;transform:rotate(-3deg)}
+  .foto img{width:100%;height:100%;object-fit:cover}
+  .b7 h2{font-size:110px}
+  .b7 .sub{font-size:46px;line-height:1.3;color:var(--gris);margin:40px 0 0;max-width:860px}
+  .responder{margin-top:auto;background:var(--violeta);color:#fff;border-radius:44px;padding:40px 50px;font-size:46px;font-weight:600;line-height:1.3;box-shadow:0 24px 50px rgba(107,99,208,.35)}
+  .responder b{font-family:var(--display);font-size:60px;display:block;margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<!-- 1 · Gancho -->
+<section class="b b1 oscuro" id="b1">
+  <div class="blob" style="width:700px;height:700px;background:var(--violeta);top:-200px;right:-260px"></div>
+  <div class="blob" style="width:520px;height:520px;background:#f6c6bd;bottom:-160px;left:-200px;opacity:.35"></div>
+  <div class="etq">Webs · Automatizaciones · IA</div>
+  <h1>¿Tu negocio vive en planillas y <em>WhatsApp?</em></h1>
+  <p class="bajada">Primero entiendo cómo trabajás. Después hago que funcione solo.</p>
+  <div class="flecha">Te cuento cómo <b>→</b></div>
+  <div class="marca">mila<span>·</span>ops</div>
+</section>
+
+<!-- 2 · Dolores -->
+<section class="b b2 claro" id="b2">
+  <div class="blob" style="width:600px;height:600px;background:var(--lila);top:-220px;right:-200px;opacity:.5"></div>
+  <div class="etq">¿Te suena?</div>
+  <h2>Si todas las semanas hacés esto…</h2>
+  <div class="lista">
+    <div class="item"><span class="e">📋</span><span><b>Buscás</b> cuál es la última versión de la planilla</span></div>
+    <div class="item"><span class="e">🔁</span><span><b>Copiás y pegás</b> los mismos datos en tres lados</span></div>
+    <div class="item"><span class="e">💬</span><span><b>Respondés</b> veinte veces “¿cómo pago?”</span></div>
+    <div class="item"><span class="e">🤷‍♀️</span><span><b>Recién a fin de mes</b> sabés si te fue bien</span></div>
+  </div>
+  <p class="remate">…eso se puede <em>automatizar.</em></p>
+  <div class="marca">mila<span>·</span>ops</div>
+</section>
+
+<!-- 3 · Mili -->
+<section class="b b3 violeta" id="b3">
+  <div class="blob" style="width:640px;height:640px;background:var(--lila);bottom:200px;right:-300px;opacity:.5"></div>
+  <div class="etq">Agentes con cara</div>
+  <h2>Te presento a Mili 👋</h2>
+  <p class="sub">Una asistente de IA que mira tus números y te los cuenta en palabras simples.</p>
+  <div class="cara"><img src="../img/risa.png" alt=""></div>
+  <div class="burbujas">
+    <div class="bu yo">Mili, ¿cómo venimos hoy?</div>
+    <div class="bu">Bien 🙂 Hoy vencen 3 cobros y ya les mandé el recordatorio.</div>
+  </div>
+  <div class="marca">mila<span>·</span>ops</div>
+</section>
+
+<!-- 4 · Demo tablero -->
+<section class="b b4 claro" id="b4">
+  <div class="blob" style="width:600px;height:600px;background:#f6c6bd;top:300px;left:-300px;opacity:.45"></div>
+  <div class="etq">Demo en vivo</div>
+  <h2>Una app de verdad, <em>no una planilla más.</em></h2>
+  <p class="sub">Clientes, cobros y ganancia del mes, desde el celu.</p>
+  <div class="fila">
+    <div class="celu"><img src="../img/app-tablero.png" alt=""></div>
+    <div class="notas">
+      <div class="nota"><b>Gratis</b>Probala sin registrarte</div>
+      <div class="nota"><b>Real</b>Tocá, cargá y borrá</div>
+      <span class="pastilla">Link en el texto ↓</span>
+    </div>
+  </div>
+  <div class="url">mila-ops-ia.github.io/servicios</div>
+  <div class="marca">mila<span>·</span>ops</div>
+</section>
+
+<!-- 5 · Demo salud -->
+<section class="b b5 oscuro" id="b5">
+  <div class="blob" style="width:700px;height:700px;background:var(--violeta);top:-200px;right:-300px"></div>
+  <div class="etq">Lo que hace Mili</div>
+  <h2>Te dice a quién <em>llamar hoy.</em></h2>
+  <p class="sub">Revisa la mora y los vencimientos, y te avisa antes de que sea tarde.</p>
+  <div class="fila">
+    <div class="celu"><img src="../img/app-salud.png" alt=""></div>
+    <div class="notas">
+      <div class="nota"><b>😄</b>Se ríe si vas bien</div>
+      <div class="nota"><b>🤔</b>Piensa si hay algo para mirar</div>
+      <div class="nota"><b>😮</b>Se sorprende si hay que actuar</div>
+    </div>
+  </div>
+  <div class="marca">mila<span>·</span>ops</div>
+</section>
+
+<!-- 6 · Qué hago -->
+<section class="b b6 claro" id="b6">
+  <div class="blob" style="width:620px;height:620px;background:var(--lila);bottom:300px;left:-320px;opacity:.45"></div>
+  <div class="etq">Qué hago</div>
+  <h2>Te saco trabajo <em>de encima.</em></h2>
+  <div class="servicios">
+    <div class="serv"><span class="e">🌐</span><div><b>Webs que venden</b><span>Con WhatsApp y formulario</span></div></div>
+    <div class="serv"><span class="e">⚙️</span><div><b>Automatiza­ciones</b><span>Reportes y avisos solos</span></div></div>
+    <div class="serv"><span class="e">📊</span><div><b>Apps de gestión</b><span>Todo en un solo lugar</span></div></div>
+    <div class="serv"><span class="e">🤖</span><div><b>Agentes de IA</b><span>Que responden y explican</span></div></div>
+    <div class="serv ancho"><span class="e">📘</span><div><b>Y te lo dejo andando</b><span>Con instructivo y video para tu equipo</span></div></div>
+  </div>
+  <div class="marca">mila<span>·</span>ops</div>
+</section>
+
+<!-- 7 · Llamado -->
+<section class="b b7 claro" id="b7">
+  <div class="blob" style="width:700px;height:700px;background:var(--lila);top:-260px;left:50%;transform:translateX(-50%);opacity:.55"></div>
+  <div class="etq">Charlemos</div>
+  <div class="foto"><img src="../img/mila.jpg" alt=""></div>
+  <h2>30 minutos, <em>sin costo.</em></h2>
+  <p class="sub">Me contás qué tarea te quita más tiempo y te digo con honestidad si te puedo ayudar.</p>
+  <div class="responder"><b>Respondé este estado 💬</b>y arrancamos por ahí</div>
+  <div class="marca" style="left:50%;transform:translateX(-50%);bottom:220px">mila<span>·</span>ops</div>
+</section>
+
+<script>
+  const id = location.hash.slice(1);
+  if (id) document.getElementById(id).classList.add("on");
+  else document.body.classList.add("todos");
+</script>
+</body>
+</html>
