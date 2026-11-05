@@ -202,10 +202,42 @@
   <div class="marca" style="left:50%;transform:translateX(-50%);bottom:220px">mila<span>·</span>ops</div>
 </section>
 
+<style>
+  /* Exportación por capas para el video animado: #b1?capa=0 es el fondo, ?capa=N es solo esa capa con fondo transparente */
+  body.capas{background:transparent}
+  body.capas [data-capa]{visibility:hidden}
+  body.capas [data-capa].ver{visibility:visible}
+  body.capas.transparente .b{background:transparent!important}
+  body.capas.transparente .blob{display:none}
+</style>
 <script>
-  const id = location.hash.slice(1);
-  if (id) document.getElementById(id).classList.add("on");
-  else document.body.classList.add("todos");
+  // Qué entra en cada capa (en orden de aparición, una por tiempo de música)
+  const CAPAS = {
+    b1: [".etq, h1", ".bajada", ".flecha, .marca"],
+    b2: [".etq, h2", ".item:nth-child(1)", ".item:nth-child(2)", ".item:nth-child(3)", ".item:nth-child(4)", ".remate, .marca"],
+    b3: [".etq, h2", ".sub", ".cara", ".bu.yo", ".bu:not(.yo), .marca"],
+    b4: [".etq, h2", ".sub", ".celu", ".nota:nth-child(1)", ".nota:nth-child(2)", ".pastilla, .url, .marca"],
+    b5: [".etq, h2", ".sub", ".celu", ".nota:nth-child(1)", ".nota:nth-child(2)", ".nota:nth-child(3), .marca"],
+    b6: [".etq, h2", ".serv:nth-child(1)", ".serv:nth-child(2)", ".serv:nth-child(3)", ".serv:nth-child(4)", ".serv.ancho, .marca"],
+    b7: [".etq", ".foto", "h2", ".sub", ".responder, .marca"],
+  };
+  const [id, qs] = location.hash.slice(1).split("?");
+  if (id) {
+    const b = document.getElementById(id);
+    b.classList.add("on");
+    const capa = new URLSearchParams(qs || "").get("capa");
+    (CAPAS[id] || []).forEach((sel, i) => b.querySelectorAll(sel).forEach(el => {
+      if (!el.dataset.capa) el.dataset.capa = i + 1;
+    }));
+    if (capa !== null) {
+      document.body.classList.add("capas");
+      if (capa !== "0") {
+        document.body.classList.add("transparente");
+        b.querySelectorAll(`[data-capa="${capa}"]`).forEach(el => el.classList.add("ver"));
+      }
+    }
+    document.title = "capas=" + (CAPAS[id] || []).length;
+  } else document.body.classList.add("todos");
 </script>
 </body>
 </html>
