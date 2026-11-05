@@ -31,7 +31,7 @@
   h2{font-size:clamp(2.1rem,5vw,3.4rem);font-weight:800}
   h2 em,h1 em{font-style:normal;color:var(--violeta)}
   .etiqueta{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--violeta)}
-  section{padding:100px 0}
+  section{padding:100px 0;scroll-margin-top:20px}
   .cabecera{max-width:700px;margin-bottom:50px}
   .cabecera p{color:var(--gris);font-size:1.12rem;margin:16px 0 0}
 
@@ -117,6 +117,21 @@
   .datos-demo{display:flex;flex-wrap:wrap;gap:10px}
   .datos-demo span{background:var(--crema);border-radius:12px;padding:8px 12px;font-size:.88rem;color:var(--gris)}
   .datos-demo b{color:var(--tinta)}
+
+  /* Demo en vivo */
+  .en-vivo{background:var(--crema-2)}
+  .ventana{background:#1c1c27;border-radius:24px;overflow:hidden;box-shadow:0 30px 60px rgba(28,28,39,.22);border:1px solid rgba(28,28,39,.1)}
+  .ventana-barra{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#26263a;color:#c9c8d8;font-size:.85rem}
+  .puntos{display:flex;gap:6px}
+  .puntos i{width:11px;height:11px;border-radius:50%;background:#f07a6c}
+  .puntos i:nth-child(2){background:#e8b54a}
+  .puntos i:nth-child(3){background:#45c985}
+  .url{flex:1;background:#1c1c27;border-radius:999px;padding:5px 14px;text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .abrir{color:var(--lila);font-weight:600;text-decoration:none;white-space:nowrap}
+  .abrir:hover{text-decoration:underline}
+  .ventana iframe{display:block;width:100%;height:min(760px,80vh);border:0;background:#fff}
+  .nota-demo{margin:20px 0 0;color:var(--gris);font-size:.95rem}
+  .nota-demo b{color:var(--tinta)}
 
   /* Casos */
   .casos .grilla{grid-template-columns:repeat(2,1fr)}
@@ -220,6 +235,10 @@
     .menu{padding-left:18px}
     .marca{font-size:1.15rem}
     .tarjeta,.caso,.paquete{padding:26px}
+    .ventana{border-radius:18px}
+    .ventana-barra .url{display:none}
+    .ventana-barra{justify-content:space-between}
+    .ventana iframe{height:640px}
   }
 </style>
 </head>
@@ -229,7 +248,7 @@
   <a class="marca" href="#inicio">mila<span>·</span>ops</a>
   <nav aria-label="Secciones">
     <a href="#servicios">Qué hago</a>
-    <a href="#mili">Agentes</a>
+    <a href="#demo">Demo</a>
     <a href="#casos">Casos</a>
     <a href="#proceso">Cómo trabajo</a>
     <a href="#paquetes">Paquetes</a>
@@ -351,9 +370,29 @@
         </div>
         <p class="lectura" id="lectura-mili"></p>
         <div class="datos-demo" id="datos-mili"></div>
-        <a class="boton boton-violeta" style="margin-top:22px" href="demo-cartera/" target="_blank" rel="noopener">Probá a Mili en una app de verdad →</a>
+        <a class="boton boton-violeta" style="margin-top:22px" href="#demo">Probá a Mili en una app de verdad ↓</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Demo en vivo -->
+<section class="en-vivo" id="demo">
+  <div class="contenedor">
+    <div class="cabecera">
+      <span class="etiqueta">Demo en vivo</span>
+      <h2>Probala acá mismo, <em>sin registrarte.</em></h2>
+      <p>Es Cartera, una app de gestión de préstamos que armé, cargada con clientes inventados. Mirá el tablero, entrá a Salud para ver qué te aconseja Mili, o cargá un préstamo nuevo. Nada de lo que hagas se guarda fuera de tu navegador.</p>
+    </div>
+    <div class="ventana revelar">
+      <div class="ventana-barra">
+        <span class="puntos" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="url">cartera · demo</span>
+        <a class="abrir" href="demo-cartera/" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a>
+      </div>
+      <iframe src="demo-cartera/" title="Demo de Cartera, app de gestión de préstamos" loading="lazy"></iframe>
+    </div>
+    <p class="nota-demo">Algunas ideas para probar: <b>Salud</b> → mirá a quién te dice Mili que llames · <b>Préstamos</b> → cargá uno nuevo · <b>Datos</b> → volvé a los datos de ejemplo cuando quieras.</p>
   </div>
 </section>
 
@@ -376,7 +415,7 @@
           <li>Mili revisa la mora y la concentración y avisa con su cara si hay que actuar.</li>
           <li>Instructivo en PDF y video para empezar a usarla.</li>
         </ul>
-        <a class="boton boton-violeta" style="margin-top:22px;align-self:flex-start" href="demo-cartera/" target="_blank" rel="noopener">Probá la demo →</a>
+        <a class="boton boton-violeta" style="margin-top:22px;align-self:flex-start" href="#demo">Probá la demo ↑</a>
       </article>
       <article class="caso revelar">
         <div class="dato">Todos los días, 8 h</div>

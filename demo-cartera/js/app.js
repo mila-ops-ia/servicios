@@ -95,7 +95,7 @@ function renderNav(section) {
   const dark = document.documentElement.dataset.theme === "dark" ||
     (!document.documentElement.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
   $foot.innerHTML = `
-    <div>${REMOTE ? esc(db.user ? db.user.email : "") : `Demo · datos de ejemplo<br><a href="../" style="color:var(--accent);font-weight:700">← Volver a mila·ops</a>`}</div>
+    <div>${REMOTE ? esc(db.user ? db.user.email : "") : `Demo · datos de ejemplo<br><a href="../" target="_top" style="color:var(--accent);font-weight:700">← Volver a mila·ops</a>`}</div>
     <div class="row">
       <button class="icon-btn small" data-act="theme">${dark ? "☀ Modo claro" : "☾ Modo oscuro"}</button>
       ${REMOTE ? `<a class="icon-btn small" href="#/clave" style="text-decoration:none">🔑 Contraseña</a><button class="icon-btn small" data-act="logout">Salir</button>` : ""}
