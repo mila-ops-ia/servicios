@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cartera · demo</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    try { const t = localStorage.getItem("cartera:theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="side" id="side">
+      <a class="brand" href="#/">
+        <span class="brand-mark">$</span>
+        <span>Cartera<small>Gestión de préstamos</small></span>
+      </a>
+      <button class="qs-btn" data-act="buscar" aria-label="Buscar"><span aria-hidden="true">🔍</span> Buscar <kbd>⌘K</kbd></button>
+      <nav class="nav" id="nav"></nav>
+      <div class="side-foot" id="side-foot"></div>
+    </aside>
+    <!-- Barra de arriba solo en el celular: marca + lupita -->
+    <header class="topbar-m">
+      <a class="brand" href="#/"><span class="brand-mark">$</span><span>Cartera</span></a>
+      <button class="qs-btn-m" data-act="buscar" aria-label="Buscar préstamo o cliente"><span aria-hidden="true">🔍</span> Buscar</button>
+    </header>
+    <main id="app"></main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="tip" id="tip" role="tooltip"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/calc.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/mili.js"></script>
+  <script src="js/salud.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/buscar.js"></script>
+</body>
+</html>
